@@ -20,5 +20,12 @@ function searchedCity() {
     });
 }
 
+function listCity() {
+  // fetch request gets a list of all the repos for the node.js organization
+  var cityText = $(this).siblings(".text").val();
+
+  localStorage.setItem(key, value);
+}
+
 //EVENTS
 searchedCity();
