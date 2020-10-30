@@ -1,10 +1,10 @@
 //VARIABLE DECLARATION
 var searchBtn = document.getElementById("search-button");
-var searchInput = document.getElementById("inlineFormInput");
+var searchValue = document.querySelector("[data-city-search]");
 var savedCities = document.getElementById("saved-cities");
 var currentCity = document.getElementById("current-city");
-var fiveDayForecast = document.getElementById("five-day-forecast");
-
+var cityName = document.getElementsByClassName("card-title");
+var citytemp = document.getElementById("city-temperature");
 //FUNCTION DECLARATION
 
 function searchedCity() {
