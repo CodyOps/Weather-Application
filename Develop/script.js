@@ -14,7 +14,7 @@ var cityUV = document.getElementById("city-UV");
 function searchedCity() {
   var requestUrl =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
-    "#city-value".value +
+    "#city-value".value.trim() +
     "&appid=11cc6738fb7101f2239490031655308f";
 
   fetch(requestUrl)
