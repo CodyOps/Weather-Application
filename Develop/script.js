@@ -3,13 +3,19 @@ var searchBtn = document.getElementById("search-button");
 var searchValue = document.querySelector("[data-city-search]");
 var savedCities = document.getElementById("saved-cities");
 var currentCity = document.getElementById("current-city");
-var cityName = document.getElementsByClassName("card-title");
+var cityName = document.getElementById("city-title");
 var citytemp = document.getElementById("city-temperature");
+var cityHumidity = document.getElementById("city-humidity");
+var cityWindSpeed = document.getElementById("city-windspeed");
+var cityUV = document.getElementById("city-UV");
+
 //FUNCTION DECLARATION
 
 function searchedCity() {
-  // fetch request gets a list of all the repos for the node.js organization
-  var requestUrl = "https://api.github.com/orgs/nodejs/repos";
+  var requestUrl =
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
+    searchValue.value.trim() +
+    "&appid=11cc6738fb7101f2239490031655308f";
 
   fetch(requestUrl)
     .then(function (response) {
@@ -17,6 +23,11 @@ function searchedCity() {
     })
     .then(function (data) {
       console.log(data);
+
+      var nameValue = data["name"];
+      var tempValue = data["temp"];
+      var windValue = data["wind"];
+      var uvValue = data["uv"];
     });
 }
 
@@ -28,4 +39,4 @@ function listCity() {
 }
 
 //EVENTS
-searchedCity();
+searchBtn.addEventListener("click", searchedCity());
