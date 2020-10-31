@@ -1,6 +1,6 @@
 //VARIABLE DECLARATION
 var searchBtn = document.getElementById("search-button");
-var searchValue = document.querySelector("city-value");
+var searchValue = document.getElementById("city-value");
 var savedCities = document.getElementById("saved-cities");
 var currentCity = document.getElementById("current-city");
 var cityName = document.getElementById("city-title");
@@ -11,26 +11,26 @@ var cityUV = document.getElementById("city-UV");
 
 //FUNCTION DECLARATION
 
-function searchedCity() {
+function searchedCity(name) {
   var requestUrl =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
-    "#city-value".value.trim() +
-    "&appid=11cc6738fb7101f2239490031655308f";
+    name +
+    "&appid=11cc6738fb7101f2239490031655308f&units=imperial";
 
   fetch(requestUrl)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      console.log(data.main.temp);
 
       var nameValue = data["name"];
-      var tempValue = data["main.temp"];
+      var tempValue = data.main.temp;
       var windValue = data["wind"];
       var uvValue = data["uv"];
 
       "#city-title".innerHTML = nameValue;
-      "#city-temperature".innerHTML = tempValue;
+      citytemp.textContent = tempValue;
       "city-windspeed".innerHTML = windValue;
       "city-UV".innerHTML = uvValue;
     });
@@ -43,4 +43,8 @@ function listCity() {
 }
 
 //EVENTS
-searchBtn.addEventListener("click", searchedCity());
+searchBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  console.log(searchValue.value);
+  searchedCity(searchValue.value);
+});
