@@ -55,8 +55,7 @@ function searchWeather(name) {
       cityPic.setAttribute("alt", data.weather[0].description);
 
       //adding the value of the temp, humidity and wind to teh html
-      cityTemp.textContent =
-        "Temperature: " + convert(data.main.temp) + " degrees Fahrenheit";
+      cityTemp.textContent = "Temperature: " + convert(data.main.temp) + " F";
       cityHumidity.textContent = "Humidity: " + data.main.humidity + "%";
       cityWindSpeed.textContent =
         "Wind Speed: " + data.wind.speed + " Miles Per Hour";
@@ -127,6 +126,7 @@ function searchWeather(name) {
             var forecastIndex = index * 8 + 4;
 
             var foreCastDate = new Date(data.list[forecastIndex].dt * 1000);
+            console.log(foreCastDate);
             var foreCastDay = foreCastDate.getDate();
             var foreCastMonth = foreCastDate.getMonth() + 1;
             var foreCastYear = foreCastDate.getFullYear();
@@ -149,7 +149,9 @@ function searchWeather(name) {
             //creates a new h4 tag to hold the temperature text content
             var forecastTemp = document.createElement("h4");
             forecastTemp.textContent =
-              "Temperature: " + data.list[forecastIndex].main.temp;
+              "Temperature: " +
+              convert(data.list[forecastIndex].main.temp) +
+              " F";
             forecastElements[index].append(forecastTemp);
 
             //creates a new p tag to hold the humidity text content
@@ -176,7 +178,7 @@ function saveSearchHistory() {
     historyContent.setAttribute("class", "font-weight-bold btn btn-warning");
     historyContent.setAttribute("value", searchHistory[index]);
     historyContent.addEventListener("click", function () {
-      searchWeather(historyContent.value);
+      searchWeather(searchHistory[index]);
     });
     cityHistory.append(historyContent);
   }
