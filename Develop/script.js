@@ -72,6 +72,37 @@ function searchWeather(name) {
           cityUV.textContent = "UV Index: ";
           cityUV.append(UVIndex);
         });
+
+      var cityIdValue = data.id;
+      var forecastURL =
+        "https://api.openweathermap.org/data/2.5/forecast?id=" +
+        cityIdValue +
+        "&appid=" +
+        APIKey;
+
+      fetch(forecastURL)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          var forecastElements = document.getElementsByClassName("forecast");
+
+          for (let index = 0; index < forecastElements.length; index++) {
+            forecastElements[index].textContent = "";
+
+            var forecastIndex = index * 8 + 4;
+
+            var foreCastDate = new Date(data.list[forecastIndex].dt * 1000);
+            var foreCastDay = foreCastDate.getDate();
+            var foreCastMonth = foreCastDate.getMonth() + 1;
+            var foreCastYear = foreCastDate.getFullYear();
+            var addForecastDate = document.createElement("p");
+            addForecastDate.setAttribute("class", "mt-3 mb-0 forecast-date");
+            addForecastDate.textContent =
+              foreCastMonth + "/" + foreCastDay + "/" + foreCastYear;
+            forecastElements[index].append(foreCastDate);
+          }
+        });
     });
 }
 
