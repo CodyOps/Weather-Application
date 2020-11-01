@@ -1,13 +1,15 @@
 //VARIABLE DECLARATION
+var cityInput = document.getElementById("city-input");
+var clearCity = document.getElementById("clear-history");
 var searchBtn = document.getElementById("search-button");
-var searchValue = document.getElementById("city-value");
-var savedCities = document.getElementById("saved-cities");
-var currentCity = document.getElementById("current-city");
-var cityName = document.getElementById("city-title");
+var cityName = document.getElementById("city-name");
+var cityPic = document.getElementById("current-pic");
 var citytemp = document.getElementById("city-temperature");
 var cityHumidity = document.getElementById("city-humidity");
 var cityWindSpeed = document.getElementById("city-windspeed");
 var cityUV = document.getElementById("city-UV");
+var cityHistory = document.getElementById("history");
+var searchHistory = JSON.parse(localStorage.getItem("search"));
 
 //FUNCTION DECLARATION
 
