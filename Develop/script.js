@@ -129,11 +129,20 @@ function searchWeather(name) {
 function convert(temp) {
   return Math.floor((temp - 273.15) * 1.8 + 32);
 }
-// function listCity() {
-//   var cityText = $(this).siblings(".text").val();
 
-//   localStorage.setItem(key, value);
-// }
+function saveSearchHistory() {
+  cityHistory.textContent = "";
+  for (let index = 0; index < searchHistory.length; index++) {
+    var historyContent = document.createElement("input");
+    historyContent.setAttribute("type", "text");
+    historyContent.setAttribute("class", "form bg-white");
+    historyContent.setAttribute("value", searchHistory[i]);
+    historyContent.addEventListener("click", function () {
+      searchWeather(historyContent.value);
+    });
+    cityHistory.append(historyContent);
+  }
+}
 
 // //EVENTS
 searchBtn.addEventListener("click", function (event) {
@@ -141,9 +150,10 @@ searchBtn.addEventListener("click", function (event) {
   var searchInput = cityInput.value;
   console.log(cityInput.value);
   searchWeather(cityInput.value);
+  saveSearchHistory();
 });
 
 clearCity.addEventListener("click", function () {
   searchHistory = [];
-  renderSearchHistory();
+  saveSearchHistory();
 });
