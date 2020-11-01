@@ -67,7 +67,7 @@ function searchWeather(name) {
         })
         .then(function (data) {
           var UVIndex = document.createElement("span");
-          UVIndex.setAttribute("class", "badge badge-danger");
+          UVIndex.setAttribute("class", "badge badge-info");
           UVIndex.textContent = data[0].value;
           cityUV.textContent = "UV Index: ";
           cityUV.append(UVIndex);
