@@ -50,74 +50,51 @@
                   <button class="btn btn-primary" type="button" id="clear-history">Clear Search History</button>
                   <form id="history"></form>
             </div>
-          
-
-          <div class="city card col-md-8">
-            <div class="card">
-                <div class="card-body" id="current-city">
-                  <h3 class="card-title" id="city-title">City: <p class="card-text" id= "city-title"></p></h3>
-                  <h4>Temperature: <p class="card-text" id= "city-temperature"></p></h4>
-                  <h4>Humidity: <p class="card-text" id="city-humidity"></p></h4>
-                  <h4>Wind Speed: <p class="card-text" id="city-windspeed"></p></h4>
-                  <h4>UV Index: <p class="card-text" id="city-UV"></p></h4>
-                  
+          <div class="city card col-lg-8">
+              <div class="row">
+                <div class="col-12 border border-dark m-3 bg-light">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span id="city-name" class="city-name"></span>
+                            <img id="current-pic" src="image-link" alt="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p id="city-temperature">London</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p id="city-humidity">Humidity</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p id="city-windspeed">Windspeed</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p id="city-UV">UV Index</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="row" id="five-day-forecast">
-              <div class ="weather card col-md-2.3">
-              <div class="card text-white bg-primary mb-2" style="max-width: 18rem;">
-                <div class="card-header">Date</div>
-                <div class="card-body">
-                  <h5 class="card-title">Emoji</h5>
-                  <p class="card-text">Temperature</p>
+                <div class="row">
+                  <div class="col forecast bg-primary text-white ml-3 mb-3 rounded">99</div>
+                  <div class="col forecast bg-primary text-white ml-3 mb-3 rounded">100</div>
+                  <div class="col forecast bg-primary text-white ml-3 mb-3 rounded">102</div>
+                  <div class="col forecast bg-primary text-white ml-3 mb-3 rounded">95</div>
+                  <div class="col forecast bg-primary text-white ml-3 mb-3 rounded">98</div>
                 </div>
-              </div>
-            </div>
-            <div class ="col-md-2.3">
-              <div class="card text-white bg-primary mb-2" style="max-width: 18rem;">
-                <div class="card-header">Date</div>
-                <div class="card-body">
-                  <h5 class="card-title">Emoji</h5>
-                  <p class="card-text">Temperature</p>
-                </div>
-              </div>
-            </div>
-            <div class ="col-md-2.3">
-                <div class="card text-white bg-primary mb-2" style="max-width: 18rem;">
-                  <div class="card-header">Date</div>
-                  <div class="card-body">
-                    <h5 class="card-title">Emoji</h5>
-                    <p class="card-text">Temperature</p>
-                  </div>
-                </div>
-              </div>
-              <div class ="col-md-2.3">
-                <div class="card text-white bg-primary mb-2" style="max-width: 18rem;">
-                  <div class="card-header">Date</div>
-                  <div class="card-body">
-                    <h5 class="card-title">Emoji</h5>
-                    <p class="card-text">Temperature</p>
-                  </div>
-                </div>
-              </div>
-              <div class ="col-md-2.3">
-                <div class="card text-white bg-primary mb-2" style="max-width: 18rem;">
-                  <div class="card-header">Date</div>
-                  <div class="card-body">
-                    <h5 class="card-title">Emoji</h5>
-                    <p class="card-text">Temperature</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
-            
-          </div>
-        
-        
+        <div class="row">
+          <a href="https://openweathermap.org/api">Powered By Open Weather Map</a> 
+        </div>
+  </div>
       </div>
-      <a href="https://openweathermap.org/api">Powered By Open Weather Map</a> 
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="Develop/script.js"></script>
