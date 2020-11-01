@@ -35,7 +35,7 @@ function searchWeather(name) {
       var month = currentDate.getMonth() + 1;
       var year = currentDate.getFullYear();
 
-      cityName.textContent = data.name + (month + "/" + day + "/" + year);
+      cityName.textContent = data.name + " " + (month + "/" + day + "/" + year);
 
       var weatherImage = data.weather[0].icon;
 
@@ -44,8 +44,9 @@ function searchWeather(name) {
         "https://openweathermap.org/img/wn/" + weatherImage + "@2x.png"
       );
       cityPic.setAttribute("alt", data.weather[0].description);
-      cityTemp.textContent = "Temperature: " + data.main.temp + " &#176F";
-      cityTemp.textContent = "Humidity: " + data.main.humidity + "%";
+      cityTemp.textContent =
+        "Temperature: " + convert(data.main.temp) + " degrees Fahrenheit";
+      cityHumidity.textContent = "Humidity: " + data.main.humidity + "%";
       cityWindSpeed.textContent =
         "Wind Speed: " + data.wind.speed + " Miles Per Hour";
 
@@ -125,6 +126,9 @@ function searchWeather(name) {
     });
 }
 
+function convert(temp) {
+  return Math.floor((temp - 273.15) * 1.8 + 32);
+}
 // function listCity() {
 //   var cityText = $(this).siblings(".text").val();
 
@@ -137,4 +141,9 @@ searchBtn.addEventListener("click", function (event) {
   var searchInput = cityInput.value;
   console.log(cityInput.value);
   searchWeather(cityInput.value);
+});
+
+clearCity.addEventListener("click", function () {
+  searchHistory = [];
+  renderSearchHistory();
 });
