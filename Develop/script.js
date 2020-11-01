@@ -35,7 +35,9 @@ function searchWeather(name) {
       var month = currentDate.getMonth() + 1;
       var year = currentDate.getFullYear();
 
-      cityName.textContent = data.name + " " + (month + "/" + day + "/" + year);
+      cityName.textContent =
+        data.name + "    " + (month + "/" + day + "/" + year);
+      cityName.setAttribute("class", "font-weight-bold");
 
       var weatherImage = data.weather[0].icon;
 
