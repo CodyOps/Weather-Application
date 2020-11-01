@@ -10,7 +10,7 @@ var cityWindSpeed = document.getElementById("city-windspeed");
 var cityUV = document.getElementById("city-UV");
 var cityHistory = document.getElementById("history");
 var searchHistory = JSON.parse(localStorage.getItem("search"));
-var APIKey = "&appid=11cc6738fb7101f2239490031655308f&units=imperial";
+var APIKey = "&appid=11cc6738fb7101f2239490031655308f";
 
 //FUNCTION DECLARATION
 
@@ -51,26 +51,26 @@ function searchWeather(name) {
         "Wind Speed: " + response.data.wind.speed + " Miles Per Hour";
     });
 
-  fetch(requestUrl)
+  var latitude = data.coord.lat;
+  var longitude = data.coord.lon;
+
+  var UVUrl =
+    "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" +
+    latitude +
+    "&lon=" +
+    longitude +
+    "&appid=" +
+    APIKey +
+    "&cnt=1";
+
+  fetch(UVUrl)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      var latitude = response.data.coord.lat;
-      var longitude = response.data.coord.lon;
-
-      var UVUrl =
-        "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" +
-        lat +
-        "&lon=" +
-        lon +
-        "&appid=" +
-        APIKey +
-        "&cnt=1";
-
-      let UVIndex = document.createElement("span");
+      var UVIndex = document.createElement("span");
       UVIndex.setAttribute("class", "badge badge-danger");
-      UVIndex.innerHTML = response.data[0].value;
+      UVIndex.textContent = data[0].value;
       currentUVEl.innerHTML = "UV Index: ";
       currentUVEl.append(UVIndex);
     });
