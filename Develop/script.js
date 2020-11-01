@@ -9,7 +9,7 @@ var cityHumidity = document.getElementById("city-humidity");
 var cityWindSpeed = document.getElementById("city-windspeed");
 var cityUV = document.getElementById("city-UV");
 var cityHistory = document.getElementById("history");
-var searchHistory = JSON.parse(localStorage.getItem("search"));
+var searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 var APIKey = "11cc6738fb7101f2239490031655308f";
 
 //FUNCTION DECLARATION
@@ -150,6 +150,8 @@ searchBtn.addEventListener("click", function (event) {
   var searchInput = cityInput.value;
   console.log(cityInput.value);
   searchWeather(cityInput.value);
+  searchHistory.push(searchInput);
+  localStorage.setItem("search", JSON.stringify(searchHistory));
   saveSearchHistory();
 });
 

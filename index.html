@@ -22,7 +22,7 @@
     <header>
       <div class="jumbotron jumbotron-fluid text-center bg-warning">
         <div class="container">
-          <h1 class="display-2 font-weight-normal">Weather Dashboard</h1>
+          <h3 class="display-2 font-weight-normal">Weather Dashboard</h3>
           <p class="lead font-weight-normal">
           Access weather outlook across the world
           </p>
@@ -41,7 +41,7 @@
                         type="text"
                         class="form-control mb-2 city-search container"
                         id="city-value"
-                        placeholder="Search a City"
+                        placeholder="Type a city name to explore!"
                       />
                       <div class="col-md-auto input-group-append">
                         <button type="button" class="btn btn-primary" id="search-button"><i class="fas fa-search" id="search-icon"></i></button>
@@ -81,17 +81,22 @@
                     </div>
                 </div>
                 <div class="row">
-                  <div class="col forecast bg-primary text-white ml-3 mb-3 rounded">99</div>
-                  <div class="col forecast bg-primary text-white ml-3 mb-3 rounded">100</div>
-                  <div class="col forecast bg-primary text-white ml-3 mb-3 rounded">102</div>
-                  <div class="col forecast bg-primary text-white ml-3 mb-3 rounded">95</div>
-                  <div class="col forecast bg-primary text-white ml-3 mb-3 rounded">98</div>
+                  <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+                  <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+                  <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+                  <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+                  <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
                 </div>
             </div>
           </div>
         </div>
+        <br>
         <div class="row">
-          <a href="https://openweathermap.org/api">Powered By Open Weather Map</a> 
+          <div class="col-md-10"></div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-success" href="https://openweathermap.org/">Powered By OpenWeather</button>
+            
+          </div>
         </div>
   </div>
       </div>
