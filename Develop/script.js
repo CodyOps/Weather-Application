@@ -199,3 +199,8 @@ clearCity.addEventListener("click", function () {
   searchHistory = [];
   saveSearchHistory();
 });
+
+saveSearchHistory();
+if (searchHistory.length > 0) {
+  searchWeather(searchHistory[searchHistory.length - 1]);
+}
