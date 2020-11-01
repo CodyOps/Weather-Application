@@ -85,8 +85,20 @@ function searchWeather(name) {
           var UVIndex = document.createElement("span");
           UVIndex.setAttribute("class", "badge badge-primary");
           UVIndex.textContent = data[0].value;
-          cityUV.textContent = "UV Index: ";
-          cityUV.append(UVIndex);
+
+          if (data[0] > 8) {
+            cityUV.textContent = "UV Index: ";
+            cityUV.setAttribute("class", "bg-danger");
+            cityUV.append(UVIndex);
+          } else if ((data[0] = 5 - 8)) {
+            cityUV.textContent = "UV Index: ";
+            cityUV.setAttribute("class", "bg-warning");
+            cityUV.append(UVIndex);
+          } else if (data[0] < 5) {
+            cityUV.textContent = "UV Index: ";
+            cityUV.setAttribute("class", "bg-primary");
+            cityUV.append(UVIndex);
+          }
         });
 
       //Grabs the city id value from the returned object and uses the id to run the five day forecast URL + API Key
@@ -159,8 +171,8 @@ function saveSearchHistory() {
   for (let index = 0; index < searchHistory.length; index++) {
     var historyContent = document.createElement("input");
     historyContent.setAttribute("type", "text");
-    historyContent.setAttribute("class", "form bg-white");
-    historyContent.setAttribute("value", searchHistory[i]);
+    historyContent.setAttribute("class", "font-weight-bold btn btn-warning");
+    historyContent.setAttribute("value", searchHistory[index]);
     historyContent.addEventListener("click", function () {
       searchWeather(historyContent.value);
     });
