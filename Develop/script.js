@@ -83,22 +83,24 @@ function searchWeather(name) {
         .then(function (data) {
           //create a new element in the html to append the UV value obtained
           var UVIndex = document.createElement("span");
-          UVIndex.setAttribute("class", "badge badge-primary");
+          // UVIndex.setAttribute("class", "badge badge-primary");
           UVIndex.textContent = data[0].value;
 
-          if (data[0] > 8) {
+          if (data[0].value > 8) {
             cityUV.textContent = "UV Index: ";
-            cityUV.setAttribute("class", "bg-danger");
+            cityUV.setAttribute("class", "badge badge-danger");
             cityUV.append(UVIndex);
-          } else if ((data[0] = 5 - 8)) {
+          } else if (5 < data[0].value < 8) {
             cityUV.textContent = "UV Index: ";
-            cityUV.setAttribute("class", "bg-warning");
+            cityUV.setAttribute("class", "badge badge-warning");
             cityUV.append(UVIndex);
-          } else if (data[0] < 5) {
+          } else if (data[0].value < 5) {
             cityUV.textContent = "UV Index: ";
-            cityUV.setAttribute("class", "bg-primary");
+            cityUV.setAttribute("class", "badge badge-primary");
             cityUV.append(UVIndex);
           }
+
+          console.log(data[0]);
         });
 
       //Grabs the city id value from the returned object and uses the id to run the five day forecast URL + API Key
