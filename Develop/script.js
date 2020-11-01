@@ -101,6 +101,25 @@ function searchWeather(name) {
             addForecastDate.textContent =
               foreCastMonth + "/" + foreCastDay + "/" + foreCastYear;
             forecastElements[index].append(foreCastDate);
+
+            var forecastWeatherImage = document.createElement("img");
+            forecastWeatherImage.setAttribute(
+              "src",
+              "https://openweathermap.org/img/wn/" +
+                data.list[forecastIndex].weather[0].icon +
+                "@2x.png"
+            );
+            forecastElements[index].append(forecastWeatherImage);
+
+            var forecastTemp = document.createElement("h4");
+            forecastTemp.textContent =
+              "Temperature: " + data.list[forecastIndex].main.temp;
+            forecastElements[index].append(forecastTemp);
+
+            var forecastHumidity = document.createElement("p");
+            forecastHumidity.textContent =
+              "Humidity: " + data.list[forecastIndex].main.humidity + "%";
+            forecastElements[index].append(forecastHumidity);
           }
         });
     });
