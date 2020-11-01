@@ -12,8 +12,8 @@ The link is: https://codyops.github.io/Weather-Application/
 
 Images:
 
-[Image Desktop screen size](https://user-images.githubusercontent.com/70075378/97818114-bf2f0c80-1c5d-11eb-82aa-52ce26afcc75.png)
+![Image Desktop screen size](https://user-images.githubusercontent.com/70075378/97818114-bf2f0c80-1c5d-11eb-82aa-52ce26afcc75.png)
 
-[Image iPad screen size](https://user-images.githubusercontent.com/70075378/97818120-d2da7300-1c5d-11eb-80e3-b6348a6e51f1.png)
+![Image iPad screen size](https://user-images.githubusercontent.com/70075378/97818120-d2da7300-1c5d-11eb-80e3-b6348a6e51f1.png)
 
-[Image iPhone screen size](https://user-images.githubusercontent.com/70075378/97818130-e554ac80-1c5d-11eb-85bb-5b22e331d074.png)
+![Image iPhone screen size](https://user-images.githubusercontent.com/70075378/97818130-e554ac80-1c5d-11eb-85bb-5b22e331d074.png)
