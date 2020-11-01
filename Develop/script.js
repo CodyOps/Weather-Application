@@ -24,12 +24,12 @@ function searchedCity(name) {
     .then(function (data) {
       console.log(data.main.temp);
 
-      var nameValue = data["name"];
+      var nameValue = data.name;
       var tempValue = data.main.temp;
-      var windValue = data["wind"];
+      var windValue = data.wind;
       var uvValue = data["uv"];
 
-      "#city-title".innerHTML = nameValue;
+      cityName = nameValue;
       citytemp.textContent = tempValue;
       "city-windspeed".innerHTML = windValue;
       "city-UV".innerHTML = uvValue;

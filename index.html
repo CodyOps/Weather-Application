@@ -20,49 +20,46 @@
   </head>
   <body>
     <header>
-    <div class="jumbotron jumbotron-fluid text-center bg-warning">
-      <div class="container">
-        <h1 class="display-2 font-weight-normal">Weather Dashboard</h1>
-        <p class="lead font-weight-normal">
+      <div class="jumbotron jumbotron-fluid text-center bg-warning">
+        <div class="container">
+          <h1 class="display-2 font-weight-normal">Weather Dashboard</h1>
+          <p class="lead font-weight-normal">
           Access weather outlook across the world
-        </p>
+          </p>
+        </div>
       </div>
-      </header>
-
+      </header> 
+    
     <main>
       <div class="container">
-        <form>
-          <div class="form-row align-items-center">
-            <div class="col-md-4">  
-                <h3>Search for a City</h3>
-              <label class="sr-only" for="inlineFormInput">Search</label>
-              <input
-                type="text"
-                class="form-control mb-2 city-search container"
-                id="city-value"
-                placeholder="Search a City"
-              /></form>
-              <div class="col-md-auto">
-                <button type="submit" class="btn btn-primary mb-2" id="search-button"><i class="fas fa-search" id="search-icon"></i></button>
-              </div>
-              <ul class="list-group" id="saved-cities">
-            <li class="list-group-item">City 1</li>
-            <li class="list-group-item">City 2</li>
-            <li class="list-group-item">City 3</li>
-            <li class="list-group-item">City 4</li>
-            <li class="list-group-item">City 5</li>
-          </ul>
-          </div>
+          <div class="row">
+            <div class="col-md-4 bg-light">  
+                <h3 class="search-header">Search for a City</h3>
+                  <div class= "input-group">
+                    <label class="sr-only" for="inlineFormInput">Search</label>
+                      <input
+                        type="text"
+                        class="form-control mb-2 city-search container"
+                        id="city-value"
+                        placeholder="Search a City"
+                      />
+                      <div class="col-md-auto input-group-append">
+                        <button type="button" class="btn btn-primary" id="search-button"><i class="fas fa-search" id="search-icon"></i></button>
+                      </div>
+                  </div>
+                  <button class="btn btn-primary" type="button" id="clear-history">Clear Search History</button>
+                  <form id="history"></form>
+            </div>
+          
 
           <div class="city card col-md-8">
             <div class="card">
                 <div class="card-body" id="current-city">
-                  <h3 class="card-title" id="city-title">City</h3>
-                  <h3>Temperature <p class="card-text" id= "city-temperature"></p></h3>
-                  
-                  <p class="card-text" id="city-humidity">Humidity</p>
-                  <p class="card-text" id="city-windspeed">Wind Speed</p>
-                  <p class="card-text" id="city-UV">UV Index</p>
+                  <h3 class="card-title" id="city-title">City: <p class="card-text" id= "city-title"></p></h3>
+                  <h4>Temperature: <p class="card-text" id= "city-temperature"></p></h4>
+                  <h4>Humidity: <p class="card-text" id="city-humidity"></p></h4>
+                  <h4>Wind Speed: <p class="card-text" id="city-windspeed"></p></h4>
+                  <h4>UV Index: <p class="card-text" id="city-UV"></p></h4>
                   
                 </div>
               </div>
@@ -117,7 +114,7 @@
         </div>
             
           </div>
-        </form>
+        
         
       </div>
       <a href="https://openweathermap.org/api">Powered By Open Weather Map</a> 
